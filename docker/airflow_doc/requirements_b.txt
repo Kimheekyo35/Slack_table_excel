@@ -1,0 +1,4 @@
+pandas>=2.0
+google-api-python-client>=2.0
+google-auth-httplib2>=0.2
+playwright>=1.40

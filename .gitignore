@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+airflow_env/
+json_file/
+
+# Airflow
+airflow.db
+airflow.cfg
+logs/
+*.log
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+
+# Secrets
+*.key
+*.pem
+*.json
+
+# else
+key.py

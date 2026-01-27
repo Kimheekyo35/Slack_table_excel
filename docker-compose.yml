@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: docker/airflow_doc/Dockerfile
+    container_name: airflow
+    ports:
+      - "8082:8080"
+    environment:
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__BASE_URL: http://localhost:8082
+    volumes:
+      - /home/linuxuser/wemarketing/Airflow_project/airflow/dags:/opt/airflow/dags
+      - /home/linuxuser/wemarketing/japantwitter_makeup_crawling:/opt/airflow/app/japantwitter_makeup_crawling
+      - /home/linuxuser/wemarketing/japan_mc4_daily:/opt/airflow/app/japan_mc4_daily
+      - /home/linuxuser/wemarketing/Airflow_project/market_3th_team:/opt/airflow/app/Airflow_project/market_3th_team
+      - /home/linuxuser/wemarketing/business_support_team_wema:/opt/airflow/app/business_support_team_wema
+      - /home/linuxuser/wemarketing/그로스_동남아_틱톡_크롤링:/opt/airflow/app/그로스_동남아_틱톡_크롤링
+      - /home/linuxuser/wemarketing/gm1/01.tiktok_sheet_crawling:/opt/airflow/app/gm1/01.tiktok_sheet_crawling
+    command: ["airflow", "standalone"]
+    restart: unless-stopped

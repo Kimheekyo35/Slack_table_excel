@@ -30,12 +30,6 @@ from selenium_utils import build_chrome_options, create_chrome_driver, cleanup_d
 # --------------------------------------------------------------------------- #
 load_dotenv(override=True)
 
-DB_HOST = os.getenv("PG_HOST", "141.164.49.115")
-DB_PORT = os.getenv("PG_PORT", "5432")
-DB_DATABASE = os.getenv("PG_DATABASE", "benow_db")
-DB_USER = os.getenv("PG_USER", "wemarketing_user")
-DB_PASSWORD = os.getenv("PG_PASSWORD", "ehgus1500")
-
 SEOUL_TZ = ZoneInfo("Asia/Seoul")
 
 # 컬럼 이름 상수
